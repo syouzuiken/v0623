@@ -18,6 +18,7 @@ namespace v0623
         }
         int vx=-10;
         int vy=-10;
+        int score = 100;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -44,12 +45,26 @@ namespace v0623
                 vy = -10;
 
             }
+
+            score--;
+            label2.Text = $"SCORE{score}";
+
+            if(score==0)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("GAME OVER");
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("章瑞謙");
             timer1.Enabled = false;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
