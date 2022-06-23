@@ -18,7 +18,7 @@ namespace v0623
         }
         int vx=-10;
         int vy=-10;
-        int score = 100;
+        int score = 1000;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -27,22 +27,22 @@ namespace v0623
 
             if (label1.Left < 0)
             {
-                vx = 10;
+                vx = Math.Abs(vx)* 11 / 10;
             }
 
             if (label1.Right > ClientSize.Width)
             {
-                vx = -10;
+                vx = -Math.Abs(vx) * 11 / 10;
             }
 
             if (label1.Top < 0)
             {
-                vy = 10;
+                vy = Math.Abs(vy) * 11 / 10;
             }
 
             if (label1.Bottom > ClientSize.Height)
             {
-                vy = -10;
+                vy = -Math.Abs(vy) * 11 / 10;
 
             }
 
